@@ -1,0 +1,60 @@
+{
+using System.ComponentModel.Composition;
+using System.Windows.Input;
+using WafApplication1.Applications.Views;
+
+namespace WafApplication1.Applications.ViewModels
+{
+    [Export]
+    internal class ShellViewModel : ViewModel<IShellView>
+    {
+        private readonly DelegateCommand exitCommand;
+
+
+        [ImportingConstructor]
+        public ShellViewModel(IShellView view)
+            : base(view)
+        {
+            exitCommand = new DelegateCommand(Close);
+        }
+
+        public string Title => ApplicationInfo.GetProductName();
+
+        public ICommand ExitCommand
+        {
+            get
+            {
+                return exitCommand;
+            }
+        }
+
+        public void Show() => ViewCore.Show();
+
+        private void Close()
+        {
+            ViewCore.Close();
+        }
+    }
+
+    internal class DelegateCommand
+    {
+    }
+
+    internal class ApplicationInfo
+    {
+        private static string productName;
+
+        public static string ProductName { get => productName; set => productName = value; }
+
+        public static string GetProductName()
+        {
+            return ProductName;
+        }
+
+        internal static void SetProductName(string value)
+        {
+            ProductName = value;
+        }
+    }
+}
+}

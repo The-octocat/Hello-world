@@ -1,0 +1,764 @@
+< <form name="frm">
+	<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" class="main">
+
+<script Language="javascript">
+var L_helplink_text="1033";
+
+function HelpWindow(strHelpUrl)
+{
+	var url = "help/" + L_helplink_text+strHelpUrl;
+    var wndHelp = window.open(url, "MSOWSHELP", "width=187,height=500,menubar,scrollbars,toolbar,resizable");
+}
+</script>
+ 		<tr>
+			<td width="100%" valign="top" colspan="6">
+			<table width="100%" border="0" class="ms-bannerframe" cellpadding="3" cellspacing="0">
+				<caption><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    					</caption>
+						<tr>
+							<td nowrap valign="middle" align="left">
+							<img alt="Logo" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/offlogo.gif" width="28" height="28" id="Image1"></td>
+							<td nowrap class="ms-banner" align="left" height="34">
+							<a ACCESSKEY="O" id="Home" href="file:///C:/Users/Fortinosamuel/"><ID ID=Home2>
+							Home</ID></a> <font size="2" color="#FFFFFF">|</font>
+      <ID><a ACCESSKEY="M" ID="Administration" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=webadmin.htm"><ID ID=Administration2>
+							Administration</ID></a></ID>
+      						<font size="2" color="#FFFFFF">|</font>
+<ows:if type=vserver name=hascollabsupport condition=equal result=true>
+      <ID><a ACCESSKEY="P" ID="Help" href="javascript:HelpWindow('/collab/wsahome.htm');"><ID ID=Help2Collab>
+							Help</ID></a></ID>
+</ows:if>
+<ows:if type=vserver name=hascollabsupport condition=notequal result=true>
+      <ID><a ACCESSKEY="P" ID="Help" href="javascript:HelpWindow('/publish/fpaHome.htm');"><ID ID=Help2Publish>
+							Help</ID></a></ID>
+</ows:if>
+
+     						</td>
+							<td width="99%">&nbsp;</td>
+						</tr>
+						</table>
+						</em></td>
+					</tr>
+					<tr>
+						<td class="leftbar" colspan="4">
+						<table width="100%" border="0" class="TitleArea" cellpadding="3">
+							<tr>
+								<td style="padding-bottom: 0px">
+								<table width="100%" cellpadding="0" cellspacing="0" border="0">
+									<tr>
+										<td align="center" nowrap width="105" height="40">
+										<img alt="Icon" ID="alt100" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/settings.gif" width="43" height="43"></td>
+										<td width="27">&nbsp; </td>
+										<td nowrap>
+										<table cellpadding="0" cellspacing="0">
+											<tr>
+												<td nowrap class="TitleArea" ID="Web_description">
+            <ows:if type=vserver name=hasCollabSupport condition=notequal result=true>
+												FrontPage Server Extensions 2002</ows:if>
+           									</td>
+											</tr>
+											<tr>
+												<td nowrap class="PageTitle">
+         <ows:if type=web name=IsRoot condition=equal result=true>
+         <ID ID=Web_description_2>Site Administration for</ID> 
+         </ows:if>
+         <ows:if type=web name=IsRoot condition=equal result=false>
+         <ID ID=Web_description_3>Web site Administration for</ID> 
+         </ows:if>
+         										&quot;<ows:var type=web name=fullwebname></ows:var>&quot;
+         										</td>
+											</tr>
+										</table>
+									</td>
+									</tr>
+								</table>
+								<table cellpadding="0" cellspacing="0" border="0" width="100%">
+									<tr>
+										<td height="5" colspan="5">
+										<img src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/blank.gif" width="1" height="1"></td>
+									</tr>
+									<tr>
+										<td class="SectionLine" height="2" colspan="5">
+										<img src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/blank.gif" width="1" height="1"></td>
+									</tr>
+									<tr>
+										<td height="2" colspan="5">
+										<img src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/blank.gif" width="1" height="1"></td>
+									</tr>
+								</table>
+							</td>
+							<td width="1px"></td>
+							</tr>
+						</table>
+					</td>
+					</tr>
+					<tr valign="top">
+						<td height="100%" class="ms-nav">
+						<table height="100%" class="ms-navframe" CELLPADDING="0" CELLSPACING="4" border="0" width="133px">
+							<tr valign="top">
+								<td width="100%">&nbsp;</td>
+								<td class="ms-verticaldots">&nbsp;</td>
+							</tr>
+						</table>
+						</td>
+						<td valign="top" height="100%" width="100%">
+						<table class="propertysheet" border="0" width="100%" cellspacing="4" cellpadding="0">
+ <!-- Page description-->
+    						<tr>
+								<td colspan="5" class="propertysheet" id="PageDescription">
+								Use this page to administer your Web site. By 
+								using the links on this page, you can perform 
+								tasks such as adding a new user, inviting people 
+								to your site, configuring settings for your Web 
+								site, and adding or deleting a subweb.
+     						</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="5">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+	   <ows:if type=error name=all condition=notequal result=>
+	    								<td>
+										<img src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/warn_lg.gif"></td>
+										<td>&nbsp;</td>
+										<td class="err" id="ErrorMessage"><ows:var type=error name=all></ows:var>
+										</td>
+	   </ows:if> 
+	   								</tr>
+								</table>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td></td>
+							</tr>
+
+  <!-- Administration tasks -->
+
+    						<tr height="10">
+								<td colspan="5" class="SectionHeader" ID="Section1">
+								Users and Roles</td>
+							</tr>
+							<tr>
+								<td class="SectionLine" height="1" colspan="5">
+								<img src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/blank.gif" height="1" width="1"></td>
+							</tr>
+							<tr>
+								<td valign="top">
+								<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/users.gif" alt="Users and Roles" ID="alt101"></td>
+								<td valign="top" colspan="4" class="ms-propertysheet" id="Desc1">
+
+     <ows:if type=web name=InheritPermissions condition=equal result=false>
+     <LocID id=DescRoot1>
+     							The links below take you to administration pages 
+								where you can perform tasks such as adding users, 
+								assigning roles to users, and inviting users to 
+								your Web site.
+     </LocID>
+     </ows:if>
+
+     <ows:if type=web name=InheritPermissions condition=equal result=true>
+     <LocID id=DescNonRoot1>
+     							The link below takes you to an administration 
+								page where you can change security permissions 
+								on the web.
+     </LocID>
+     </ows:if>
+    							</td>
+							</tr>
+							<tr height="10">
+								<td colspan="5">&nbsp;</td>
+							</tr>
+
+ <ows:if type=web name=InheritPermissions condition=equal result=false>
+
+    						<tr>
+								<td>&nbsp;</td>
+								<th class="PropertySheet" align="left" colspan="4">
+       <ows:if type=web name=AnonymousEnable condition=equal result=true>
+          <ID ID=AnonymousEnableId3>Anonymous browsing enabled</ID>
+       </ows:if>  
+       <ows:if type=web name=AnonymousEnable condition=equal result=false>
+          <ID ID=AnonymousEnableId4>Anonymous browsing disabled</ID>
+       </ows:if>  
+      							</th>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td class="ms-propertysheet" colspan="4">
+								<a name="ConfigAnonGifLink2" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=anonusr.htm">
+								<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ConfigAnonTextLink2" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=anonusr.htm"><ID ID=ConfigAnonText2>Change 
+								anonymous access settings</ID></a>
+      						</td>
+							</tr>
+							<tr>
+								<td>&nbsp;
+    						</td>
+							</tr>
+
+ </ows:if>  
+
+ <ows:if type=web name=IsRoot condition=equal result=false>
+     						<tr>
+								<td>&nbsp;</td>
+								<th class="PropertySheet" align="left">
+       <ows:if type=web name=InheritPermissions condition=equal result=true>
+          <ID ID=InheritPerms>Using same permissions as parent web</ID>
+       </ows:if>  
+       <ows:if type=web name=InheritPermissions condition=equal result=false>
+          <ID ID=UniquePerms>Using unique permissions</ID>
+       </ows:if>  
+      							</th>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td class="ms-propertysheet">
+								<a name="ChangePermsGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=perms.htm;">
+								<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ChangePermsTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=perms.htm"><ID ID="ChangePermsLink">Change 
+								subweb permissions</ID></a>
+      							</td>
+							</tr>
+							<tr>
+								<td>&nbsp;
+    							</td>
+							</tr>
+
+ <ows:if type=web name=InheritPermissions condition=equal result=false>
+    						<tr>
+								<td width="8%">&nbsp;</td>
+								<td width="92%" colspan="4" class="ms-propertysheet">
+								<a name="ShowUserGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=user.htm">
+								<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ShowUserTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=user.htm"><ID ID=ShowUserText>Manage 
+								users</ID></a></td>
+				</tr>
+				<tr>
+					<td width="15">&nbsp;</td>
+					<td colspan="4" class="ms-propertysheet">
+					<a name="ShowRolesGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=role.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ShowRolesTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=role.htm"><ID ID=ShowRolesText>Manage 
+					roles</ID></a></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="4" class="ms-propertysheet">
+					<a name="InviteGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=invite.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="InviteTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=invite.htm"><ID ID=InviteText>Send 
+					an invitation</ID></a>&nbsp;</td>
+				</tr>
+
+ </ows:if>  
+
+ </ows:if>  
+
+  <ows:if type=web name=IsRoot condition=equal result=true>
+
+    			<tr>
+					<td width="8%">&nbsp;</td>
+					<th class="PropertySheet" colspan="3" nowrap align="left" ID="AccountsUsed">
+					Accounts used</th>
+					<td><ows:var type=vserver name=UsedQuota></ows:var> <ID ID=AccountsUsed1>
+					of</ID> <ows:var type=vserver name=UserQuota></ows:var></td>
+				</tr>
+				<tr>
+					<td width="8%">&nbsp;</td>
+					<td width="92%" colspan="4" class="ms-propertysheet">
+					<a name="ShowAccountGifLink2" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=srvruser.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ShowAccountTextLink2" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=srvruser.htm"><ID ID=ShowAccountText2>Click 
+					here to add or delete accounts</ID></a></td>
+				</tr>
+				<tr>
+					<td>&nbsp;
+    				</td>
+				</tr>
+				<tr>
+					<td width="8%">&nbsp;</td>
+					<td width="92%" colspan="4" class="ms-propertysheet">
+					<a name="ShowUserGifLink2" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=user.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ShowUserTextLink2" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=user.htm"><ID ID=ShowUserText2>Manage 
+					users</ID></a></td>
+				</tr>
+				<tr>
+					<td width="15">&nbsp;</td>
+					<td colspan="4" class="ms-propertysheet">
+					<a name="ShowRolesGifLink2" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=role.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ShowRolesTextLink2" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=role.htm"><ID ID=ShowRolesText>Manage 
+					roles</ID></a></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="4" class="ms-propertysheet">
+					<a name="InviteGifLink2" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=invite.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="InviteTextLink2" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=invite.htm"><ID ID=InviteText2>Send 
+					an invitation</ID></a>&nbsp;</td>
+				</tr>
+ </ows:if>  
+
+    			<tr height="10">
+					<td colspan="3"></td>
+				</tr>
+
+   <ows:if type=vserver name=hascollabsupport condition=equal result=true>
+
+    			<tr height="10">
+					<td colspan="5" class="SectionHeader" ID="Section2">Web 
+					Discussions and Subscriptions</td>
+				</tr>
+				<tr>
+					<td class="SectionLine" height="1" colspan="5">
+					<img src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/blank.gif" height="1" width="1"></td>
+				</tr>
+				<tr>
+					<td valign="top">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/webdisc.gif" alt="Web Discussions and Subscriptions" ID="alt102"></td>
+					<td valign="top" colspan="4" class="ms-propertysheet" ID="Desc2">
+					The links below take you to administration pages where you 
+					can configure and manage Web Discussions and Subscriptions.</td>
+				</tr>
+				<tr height="10">
+					<td colspan="5">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<th class="PropertySheet" colspan="3" nowrap align="left" ID="WebDiscussionsEnabled">
+					Web Discussions</th>
+       <ows:if type=vserver name=EnableDiscussions condition=equal result=false>
+          			<td class="ms-propertysheet" ID="Off1">Off</td>
+       </ows:if>  
+
+       <ows:if type=vserver name=EnableDiscussions condition=notequal result=false>
+        			<td class="ms-propertysheet" ID="On1">On</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<th class="PropertySheet" colspan="3" nowrap align="left" ID="DiscussionsAllowed">
+					Allow Discussions</th>
+        <ows:if type=vserver name=LocalDiscussionsOnly condition=notequal result=true>
+        			<td class="ms-propertysheet" ID="DocsAnywhere">on documents 
+					located anywhere on the web</td>
+        </ows:if>  
+        <ows:if type=vserver name=LocalDiscussionsOnly condition=equal result=true>
+        			<td class="ms-propertysheet" ID="DocsLocal">on documents 
+					located only on this server.</td>
+        </ows:if>  
+    			</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<th class="PropertySheet" colspan="3" nowrap align="left" ID="AutoDelEnabled">
+					Automatic deletion </th>
+        <ows:if type=vserver name=DiscussionsExpiry condition=greater  result=0>
+        			<td class="ms-propertysheet" ID="On2">On</td>
+        </ows:if>  
+        <ows:if type=vserver name=DiscussionsExpiry condition=less result=1>
+        			<td class="ms-propertysheet" ID="Off2">Off</td>
+        </ows:if>  
+    			</tr>
+
+     </ows:if>  
+
+    			<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="ID=ChangeDiscSetGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=wcfgdisc.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ID=ChangeDiscSetTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=wcfgdisc.htm"><ID ID=ChangeDiscSetText>Change 
+					Web discussion settings</ID></a></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="MngDiscGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=mngdisc.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="MngDiscTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=mngdisc.htm"><ID ID=MngDiscText>Manage 
+					Web discussions</ID></a></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<th class="PropertySheet" colspan="3" nowrap align="left" ID="SubEnabled">
+					Web Subscriptions</th>
+      <ows:if type=vserver name=SMTPHost condition=equal result=>
+        			<td ID="Off31">Off</td>
+      </ows:if>  
+
+      <ows:if type=vserver name=SMTPHost condition=notequal result=> 
+      <ows:if type=vserver name=EnableNotifications condition=equal result=false>
+        			<td ID="Off3">Off</td>
+      </ows:if>  
+
+      <ows:if type=vserver name=EnableNotifications condition=notequal result=false>
+      				<td class="ms-propertysheet" ID="On3">On</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<th class="PropertySheet" colspan="3" nowrap align="left" ID="AllowSub">
+					Allow Web Subscriptions &nbsp;</th>
+            <ows:if type=vserver name=FolderSubscriptions condition=notequal result=false>
+              		<td class="ms-propertysheet" ID="OnFld">on folders and 
+					documents</td>
+            </ows:if>  
+            <ows:if type=vserver name=FolderSubscriptions condition=equal result=false>
+              		<td class="ms-propertysheet" ID="OnDoc">on documents only.</td>
+            </ows:if>  
+
+      </ows:if>  
+
+     </ows:if>  
+     			</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="ChangeSubSetGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=wcfgsub.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ChangeSubSetTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=wcfgsub.htm"><ID ID=ChangeSubSetText>Change 
+					Web subscription settings</ID></a></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="MngSubGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=mngsub.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="MngSubTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=mngsub.htm"><ID ID=MngSubText>Manage 
+					Web subscriptions</ID></a></td>
+				</tr>
+
+     </ows:if>  
+
+   <ows:if type=global name=isOWSTimerInstalled condition=equal result=true>
+
+    			<tr height="10">
+					<td colspan="3"></td>
+				</tr>
+				<tr height="10">
+					<td colspan="5" class="SectionHeader" ID="Section3">
+					Configure Usage Analysis Settings</td>
+				</tr>
+				<tr>
+					<td class="SectionLine" height="1" colspan="5">
+					<img src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/blank.gif" height="1" width="1"></td>
+				</tr>
+				<tr>
+					<td valign="top">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/usage.gif" alt="Usage Analysis Settings" ID="alt103"></td>
+					<td valign="top" colspan="4" class="ms-propertysheet" ID="Desc3">
+					The link below takes you to an administration page where you 
+					can configure usage analysis settings.</td>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<th class="PropertySheet" colspan="3" nowrap align="left" ID="UsageAnalysis">
+					Usage Analysis</th>
+        <ows:if type=vserver name=Job-usage-analysis condition=equal result=off>
+           			<td ID="Off4">Off</td>
+        </ows:if>  
+
+       <ows:if type=vserver name=Job-usage-analysis condition=notequal result=off>
+        			<td class="ms-propertysheet" ID="On4">On</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<th class="PropertySheet" colspan="3" nowrap align="left" ID="AutoDelUsg">
+					Automatic deletion </th>
+        <ows:if type=vserver name=UsageAnalysisLogExpiry condition=notequal  result=0>
+        			<td class="ms-propertysheet" ID="On5">On</td>
+        </ows:if>  
+        <ows:if type=vserver name=UsageAnalysisLogExpiry condition=equal result=0>
+        			<td class="ms-propertysheet" ID="Off5">Off</td>
+        </ows:if>  
+    			</tr>
+
+      </ows:if>  
+
+    			<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="ChangeUsgSetGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=usage.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ChangeUsgSetTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=usage.htm"><ID ID=ChangeUsgSetText>Change 
+					usage analysis settings</ID></a></td>
+				</tr>
+
+  </ows:if>  
+
+  				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr height="10">
+					<td colspan="5" class="SectionHeader" ID="Section4">Server 
+					Health</td>
+				</tr>
+				<tr>
+					<td class="SectionLine" height="1" colspan="5">
+					<img src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/blank.gif" height="1" width="1"></td>
+				</tr>
+				<tr>
+					<td valign="top">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/health.gif" alt="Server Health" ID="alt104"></td>
+					<td valign="top" colspan="4" class="ms-propertysheet" ID="Desc4">
+
+   <ows:if type=web name=IsRoot condition=equal result=true>
+
+    <LocID ID=DescRoot4>   
+     				The links below take you to administration pages where you 
+					can specify server health settings, check for problems on 
+					your server, and recalculate a Web.
+    </LocID> 
+
+   </ows:if>
+
+   <ows:if type=web name=IsRoot condition=equal result=false>
+    <LocID ID=DescNonRoot4>   
+     				The link below takes you to an administration page where you 
+					can recalculate the web.
+    </LocID> 
+   </ows:if>
+    				</td>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+
+   <ows:if type=web name=IsRoot condition=equal result=true>
+
+  <ows:if type=global name=isOWSTimerInstalled condition=equal result=true>
+
+    			<tr>
+					<td>&nbsp;</td>
+					<th class="PropertySheet" colspan="3" nowrap align="left" ID="ServerHealthEnabled">
+					Server Health</th>
+
+        <ows:if type=vserver name=Job-server-health condition=equal result=off>
+           			<td ID="Off6">Off</td>
+        </ows:if>  
+
+       <ows:if type=vserver name=Job-server-health condition=notequal result=off>
+        			<td class="ms-propertysheet" ID="On6">On</td>
+
+      </ows:if>  
+    			</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="ConfigHealthGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=wcfghlth.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ConfigHealthTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=wcfghlth.htm"><ID ID=ConfigHealthText>Change 
+					server health settings</ID></a></td>
+				</tr>
+
+   </ows:if> 
+
+    			<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="CheckHealthGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=health.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="CheckHealthTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=health.htm"><ID ID=CheckHealthText>Check 
+					server health</ID></a></td>
+
+     </ows:if>  
+    			</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="RecalcGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=recalc.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="RecalcTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=recalc.htm"><ID ID=RecalcText>Recalculate 
+					the Web</ID></a></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr height="10">
+					<td colspan="5" class="SectionHeader" ID="Section44">Version 
+					Control</td>
+				</tr>
+				<tr>
+					<td class="SectionLine" height="1" colspan="5">
+					<img src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/blank.gif" height="1" width="1"></td>
+				</tr>
+				<tr>
+					<td valign="top">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/web.gif" alt="Version Control" ID="alt105"></td>
+					<td valign="top" colspan="4" class="ms-propertysheet" ID="Desc44">
+
+    <LocID ID=DescRoot44>   
+    				The link below takes you to an administration page where you 
+					can enable source control for your Web site.
+    </LocID> 
+    				</td>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="VersionControlLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=verctrl.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="VersionControlLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=verctrl.htm"><ID ID=VersionControlText>Configure 
+					version control</ID></a></td>
+							</tr>
+
+  <ows:if type=web name=IsRoot condition=equal result=true>
+
+   <ows:for-each collection=addins length=0>
+    <ows:if type=in_loop_var name=length condition=greater result=0>
+    						<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr height="10">
+								<td colspan="5" class="SectionHeader" ID="Section5">
+								Add-Ins</td>
+							</tr>
+							<tr>
+								<td class="SectionLine" height="1" colspan="5">
+								<img src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/blank.gif" height="1" width="1"></td>
+							</tr>
+							<tr>
+								<td valign="top">
+								<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/subwebs.gif" alt="Add-Ins" ID="alt106"></td>
+								<td valign="top" colspan="4" class="ms-propertysheet" ID="Desc5">
+								The links below take you to administration pages 
+								where you can configure settings for installed 
+								Add-Ins.</td>
+							</tr>
+							<tr height="10">
+								<td colspan="5">&nbsp;</td>
+							</tr>
+    </ows:if>  
+   </ows:for-each>
+   <ows:for-each collection=addins>
+    <ows:if type=in_loop_var name=length condition=greater result=0>
+    						<tr>
+								<td>&nbsp;</td>
+								<td class="ms-propertysheet" colspan="4">
+								<a ID="addin" name="img_&lt;ows:var type=in_loop_var name=addin&gt;" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/%3Cows:var%20type=in_loop_var%20name=hyperlinkurl%3E">
+								<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;
+								<a ID="addin" name="link_&lt;ows:var type=in_loop_var name=addin&gt;" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/%3Cows:var%20type=in_loop_var%20name=hyperlinkurl%3E"><ows:var type=in_loop_var name=addin>
+								</a></td>
+							</tr>
+	</ows:if>
+   </ows:for-each>
+
+  </ows:if>
+
+    						<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr height="10">
+								<td colspan="5" class="SectionHeader" ID="diidSubwebSection">
+								Subwebs</td>
+				</tr>
+				<tr>
+					<td class="SectionLine" height="1" colspan="5">
+					<img src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/blank.gif" height="1" width="1"></td>
+				</tr>
+				<tr>
+					<td valign="top">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/subwebs.gif" id="diidSubwebImg" alt="Subwebs" ID="alt107"></td>
+					<td valign="top" colspan="4" class="ms-propertysheet">
+        <LocID ID=diidDescSubweb1>The links below take you to administration 
+					pages where you can create, merge, or delete a subweb, or 
+					manage subweb settings. The following subwebs have been 
+					created for: </LocID>
+        			&quot;<ows:var type=web name=fullwebname></ows:var>&quot;.
+        <LocID ID=diidDescSubweb2>To view the administration page for a 
+					particular subweb, click the subweb name. To view the home 
+					page for the subweb, click the URL.</LocID>
+    <ows:for-each collection=subwebs length=0>
+     <ows:if type=in_loop_var name=length condition=greater result=10>
+        <LocID ID=diidDescSubweb3>To view a list of all subwebs and manage 
+					subweb settings, click <b>More subwebs...</b>.</LocID>
+    </ows:if>  
+   </ows:for-each>
+
+     				</td>
+				</tr>
+				<tr height="10">
+					<td colspan="5">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="AddSubwebGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=newsbweb.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="AddSubwebTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=newsbweb.htm"><ID ID=AddSubwebText>Create 
+					a subweb</ID></a></td>
+				</tr>
+   <ows:for-each collection=subwebs length=0>
+     <ows:if type=in_loop_var name=length condition=greater result=0>
+    			<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="MergeSubwebGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=mergeweb.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="MergeSubwebTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=mergeweb.htm"><ID ID=MergeSubwebText>Merge 
+					a subweb</ID></a></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="DelSubwebGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=delsbweb.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="DelSubwebTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=delsbweb.htm"><ID ID=DelSubwebText>Delete 
+					a subweb</ID></a></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="4" nowrap align="left">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" class="PropertySheet">
+						<tr>
+							<th class="PropertySheet" nowrap align="left" ID="WebName">
+							Subweb name</th>
+							<th class="PropertySheet" nowrap align="left" ID="URLName">
+							URL</th>
+						</tr>
+    </ows:if>  
+   </ows:for-each>
+
+            <ows:for-each collection=subwebs length=10>
+                <ows:if type=in_loop_var name=length condition=greater result=0>
+                 		<tr>
+							<td class="ms-propertysheet">
+							<li>
+							<a target="_blank" ID="subweb" name="&lt;ows:var" type="in_loop_var" name="subwebname" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/%3Cows:var%20type=in_loop_var%20name=fullsubwebnameb%3E/_vti_bin/_vti_adm/fpadmdll.dll?page=webadmin.htm">
+							&gt;
+                  <ows:var type=in_loop_var name=shortsubwebname></ows:var></a>
+							</li>
+							</td>
+							<td class="ms-propertysheet">
+							<a target="_blank" ID="subweb1" name="&lt;ows:var" type="in_loop_var" name="subwebname" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/%3Cows:var%20type=in_loop_var%20name=fullsubwebnameb%3E/">
+							1&gt;
+                     <ows:var type=in_loop_var name=fullsubwebname></ows:var>
+                  			</a></td>
+						</tr>
+               </ows:if>  
+           </ows:for-each>
+
+     <ows:if type=in_loop_var name=length condition=greater result=0 collection="subwebs" length="0">
+       				</table>
+					</td>
+				</tr>
+     <ows:if type=in_loop_var name=length condition=greater result=10>
+     			<tr>
+					<td>&nbsp;</td>
+					<td class="ms-propertysheet" colspan="4">
+					<a name="ViewAllGifLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=weblist.htm">
+					<img border="0" src="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/Images/rect.gif"></a>&nbsp;<a name="ViewAllTextLink" href="file:///C:/Users/Fortinosamuel/Documents/My%20Web%20Sites/fpadmdll.dll?page=weblist.htm"><ID ID=ViewAllText>More 
+					subwebs...</ID></a></td>
+				</tr>
+     </ows:if>  
+
+     			<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+>

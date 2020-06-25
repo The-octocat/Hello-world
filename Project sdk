@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>OctodogApp</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Octodog</Authors>
+    <Company>GitHub</Company>
+    <PackageDescription>This package adds an Octodog!</PackageDescription>
+    <RepositoryUrl>https://github.com/octo-org/octo-cats-and-dogs</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>OctocatApp</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Octocat</Authors>
+    <Company>GitHub</Company>
+    <PackageDescription>This package adds an Octocat!</PackageDescription>
+    <RepositoryUrl>https://github.com/OWNER/REPOSITORY</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OctokittenApp" Version="12.0.2" />
+  </ItemGroup>
+
+</Project>
+ // Step 1: Use `publishConfig` option in your package.json
+"publishConfig": { "registry": "https://npm.pkg.github.com/" }
+
+// Step 2: Authenticate
+$ npm login --registry=https://npm.pkg.github.com/
+
+// Step 3: Publish
+$ npm publish 
+{
+  "name": "@my-org/server",
+  "version": "1.0.0",
+  "description": "Server app that uses the @octo-org/octo-app package",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@octo-org/octo-app": "1.0.0"
+  }
+}

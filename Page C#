@@ -1,0 +1,17 @@
+{#oppend file setup
+<%@ Page Language="C#" %> 
+}
+{blockquote language="C#" id="msnavigation"}
+{Doctype-w3c embeding if region# if}
+{html
+{ {head class="image"   }
+{ meta name="type" content="http-equiv" content="text/css/javascript" chartset="utf-8"}
+{/head}
+{body style="background-color: #000080"}
+{form action="https://github.com/samuel-velazquez" method="post" runat="server"}
+{input type="text" value="github"}
+{input button="Submit" type="Submit" value="Github"}
+{/form enctype}
+{/blockquote}
+{/body}
+{/html)
