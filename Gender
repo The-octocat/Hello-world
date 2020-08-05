@@ -1,0 +1,17 @@
+<!Docktype html>
+<html>
+<head>
+<meta name="type" content="http-equiv" chartset="utf-8">
+<title>Gender</title>
+</head>
+<body tab: border-color: #+_09>
+<form action="index.htm" method="post" runat="server">
+<center><H1>Server and per though lieved</H1></center>
+<label>GitLab</lable><input type="radio" name="Gender" checked="checked"><br>
+<label>GitHub></label><input type="radio" name="Gender" checked><br>
+<label>Iissart localhost://</label><input type="radio" name="Gender" checked><br>
+<span>Send commitd self webmaster:</span><input type="checkbox" checked>
+<input type="Submit" type="Submit" value="Message">
+</form>
+</body>
+</html>
